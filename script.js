@@ -109,7 +109,7 @@ function APIcalls() {
                 $("#" + day_number + "date").text(month + "/" + day + "/" + year);
                 let temp = Math.round(((response.list[i].main.temp - 273.15) * 9 / 5 + 32));
                 $("#" + day_number + "five_day_temp").text("Temp: " + temp + String.fromCharCode(176) + "F");
-                $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity);
+                $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity + "%");
                 $("#" + day_number + "five_day_icon").attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
                 console.log(response.list[i].dt_txt.split("-"));
                 console.log(day_number);
@@ -129,7 +129,7 @@ function APIcalls() {
         let temp = Math.round(((current_data.main.temp - 273.15) * 9 / 5 + 32))
         console.log("The temperature in " + city + " is: " + temp);
         $("#today_temp").text("Temperature: " + temp + String.fromCharCode(176) + "F");
-        $("#today_humidity").text("Humidity: " + current_data.main.humidity);
+        $("#today_humidity").text("Humidity: " + current_data.main.humidity + "%");
         $("#today_wind_speed").text("Wind Speed: " + current_data.wind.speed);
         $("#today_icon_div").attr({
             "src": "http://openweathermap.org/img/w/" + current_data.weather[0].icon + ".png",
